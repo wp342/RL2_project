@@ -22,6 +22,7 @@
 \usepackage{xcolor}
 \usepackage{caption}
 \usepackage{amsmath}
+\captionsetup[table]{skip=2.5pt}
 
 \graphicspath{{images/}}
 \DeclareCaptionType{equ}[][]
@@ -41,10 +42,8 @@
 % author name.
 
 \author{
-  Steven Etches
-  \\
+  Steven Etches \\
   \texttt{spe24@bath.ac.uk} \\
-  %% examples of more authors
   \And
   Mark Hazell \\
   \texttt{mph55@bath.ac.uk} \\
@@ -54,25 +53,6 @@
   \And
   Will Prior \\
   \texttt{wp342@bath.ac.uk}
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \AND
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
 }
 
 \begin{document}
@@ -84,6 +64,7 @@
 The reinforcement learning problem that we have chosen to address is from the multi-agent reinforcement learning (MARL) environments provided in PettingZoo.ml by \citet{terry2020pettingzoo}.
 These environments represent a generalisation of a predator and prey type environment that has good agents and adversaries, with some of the more complex environments also incorporating landmarks and objects.
 The environment that has been chosen is the Simple World Comm scenario.
+
 Simple World Comm consists of six agents, two on the "good" team and four on the "adversary" team.
 Good agents are rewarded for proximity to a 'food' object(s), adversaries that are rewarded for collisions with good agents, and also there are two additional type of objects, a barrier that blocks the way and two 'shrubberies' that hide the position of the agents from observation.
 One of the adversary agents is leader adversary that can always see the location of the good agents and communicate that location to the other adversary agents.
@@ -98,6 +79,68 @@ Adversaries on the other hand will be focused on attempting to collide and remai
   \label{fig:simple_comm_world}
 \end{figure}
 
+
+\clearpage
+% \ref{fig:stepcycle}
+The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
+The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.5]{Cycle_diagram.png}
+  \caption{Environment transition dynamics.}
+  \label{fig:stepcycle}
+\end{figure}
+
+The action spaces for each of the agents is as follows:
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Good Agent &            &             &          &            \\ \hline
+  no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
+  \end{tabular}
+  \caption{Good agent action space}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{|l|l|l|l|l|}
+  \hline
+  Adversary Agent &            &             &          &            \\ \hline
+  no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
+  \end{tabular}
+  \caption{Adversary agent action space}
+\end{table}
+
+\begin{table}[!h]
+  \centering
+  \addtolength{\leftskip} {-2cm}
+  \addtolength{\rightskip}{-2cm}
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    Adversary Leader  & say\_0                & say\_1                & say\_2                & say\_3                \\ \hline
+    no\_action  & (no\_action, say\_0)  & (no\_action, say\_1)  & (no\_action, say\_2)  & (no\_action, say\_3)  \\ \hline
+    move\_left  & (move\_left, say\_0)  & (move\_left, say\_1)  & (move\_left, say\_2)  & (move\_left, say\_3)  \\ \hline
+    move\_right & (move\_right, say\_0) & (move\_right, say\_1) & (move\_right, say\_2) & (move\_right, say\_3) \\ \hline
+    move\_up    & (move\_up, say\_0)    & (move\_up, say\_1)    & (move\_up, say\_2)    & (move\_up, say\_3)    \\ \hline
+    move\_down  & (move\_down, say\_0)  & (move\_down, say\_1)  & (move\_down, say\_2)  & (move\_down, say\_3)  \\ \hline
+    \end{tabular}
+    \caption{Adversary leader action space}
+  \end{table}
+
+The reward functions are as follows:
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{|l|l|l|l|}
+  \hline
+  Good Agent      & \begin{tabular}[c]{@{}l@{}}-5 per collision with \\ an adversary agent\end{tabular} & \begin{tabular}[c]{@{}l@{}}+2 per collision with\\ food object\end{tabular}   & \begin{tabular}[c]{@{}l@{}}-0.05 x min distance to\\ a good object\end{tabular} \\ \hline
+  Adversary Agent & \begin{tabular}[c]{@{}l@{}}+5 per collision with\\ a good agent.\end{tabular}       & \begin{tabular}[c]{@{}l@{}}-0.1 x min distance to\\ a good agent\end{tabular} &                                                                                 \\ \hline
+  \end{tabular}
+  \caption{Agent Rewards}
+  \end{table}
 
 This project focuses on the application of the Deep Q Learning (DQN) and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
 Of particular interest will be contrasting the rate at which the two algorithms learn and also the rewards that their optimal policy results in.
@@ -132,7 +175,40 @@ It is noted however that “… the algorithm has the caveat of only being able 
 
 \section{Method} \label{Method}
 
+During the initial implementation of both of the DQN and A2C algorithms a simpler problem was used allow for easier testing for correctness of the implementations.
+The Simple Push environment is characterised by two particles, an adversary and an agent, which are attempting to earn as large a reward as possible for being close to a landmark.
+The agent is rewarded proportional to its closeness to the landmark while the adversary is rewarded in two parts.
+First the adversary receives a reward proportional to its closeness to the landmark and, second it is rewarded proportionally for how far away the agent is from the landmark.
+This environment incentivises that adversary to both keep close to the landmark and also to keep the agent as far away from the landmark as possible.
+
+
+
 \subsection{Deep Q-Learning} \label{DQN-Method}
+
+\subsubsection{Implementation} \label{DQN-Implementation}
+
+Deep Q-Learning (DQN) was first developed utilising the Simple Push environment described in Section \ref{Method} allowing for quicker testing of the algorithm.
+
+
+
+The final hyperparemters that the algorithm was run with were:
+
+\begin{table}[]
+  \centering
+  \begin{tabular}{|l|l|}
+  \hline
+  \textbf{Hyperparameter}                      & \textbf{Value}          \\ \hline
+  Initial Exploration Rate $\epsilon$          & 1                       \\ \hline
+  Exploration Decay Rate                       & 0.05                    \\ \hline
+  Minimum Exploration Rate $\epsilon$          & 0.1                     \\ \hline
+  Decay Rate $\gamma$                          & 0.95                    \\ \hline
+  Learning Rate $\alpha$                       & 0.00025                 \\ \hline
+  Batch Size                                   & 8                       \\ \hline
+  Target Network Update                        & Every 10 steps          \\ \hline
+  \end{tabular}
+  \caption{Deep Q-Learning hyperparameters}
+  \end{table}
+
 
 \subsection{Actor Critic} \label{A2C-Method}
 
@@ -196,27 +272,33 @@ Given that this algorithm is known to perform well in a similar environment and 
 
 \subsubsection{Implementation} \label{A2C-Implementation}
 
-The Simple World Comm environment was set up as described in Section \ref{Background}.
-Episodes were set to a length of 500 cycles.
-Each type of the agent type in the environment uses the same actor and critic network.
-Therefore, in the implementation of 1 lead adversary, 3 adversaries and 2 (good) agents there are 3 sets of actor and critic networks.
-The algorithm was run with the following hyper parameters:
+As with the DQN algorithm discussed in subsection \ref{DQN-Implementation} the A2C algorithm was initially applied to the Simple Push.
+When applied to Simple Push the episode length was 250 steps.
+
+The algorithm was run with the following hyper parameters for both Simple Push and Simple World Comm:
 
 \begin{table}[!ht]
   \centering
   \begin{tabular}{|l|l|}
     \hline
-  \textbf{Hyper Parameter}             & \textbf{Value}  \\ \hline
-  Discount Factor, $\gamma$   & 0.99   \\ \hline
-  Learning Rate, $\alpha$     & 0.0003 \\ \hline
-  Smoothing Factor, $\lambda$ & 0.95   \\ \hline
-  Policy Clip, $\epsilon$     & 0.2    \\ \hline
-  Batch Size                  & 20     \\ \hline
-  Mini-batch Size             & 5      \\ \hline
-  Number of epochs            & 4      \\ \hline
+  \textbf{Hyperparameter}             & \textbf{Value}  \\ \hline
+  Discount Factor, $\gamma$           & 0.99            \\ \hline
+  Learning Rate, $\alpha$             & 0.0003          \\ \hline
+  Smoothing Factor, $\lambda$         & 0.95            \\ \hline
+  Policy Clip, $\epsilon$             & 0.2             \\ \hline
+  Batch Size                          & 20              \\ \hline
+  Mini-batch Size                     & 5               \\ \hline
+  Number of epochs                    & 4               \\ \hline
   \end{tabular}
   \caption{Actor Critic Hyper Parameter Values}
 \end{table}
+
+
+The Simple World Comm environment was set up as described in Section \ref{Background}.
+Episodes were set to a length of 500 steps.
+Each type of the agent type in the environment uses the same actor and critic network.
+Therefore, in the implementation of 1 lead adversary, 3 adversaries and 2 (good) agents there are 3 sets of actor and critic networks.
+
 
 The actor and critic network had the same input neuron number, being the size of the agent's state space.
 They also had the same hidden layer structure consisting of 2, 256 neuron layers both with Rectified Linear Unit (relu) activation functions.

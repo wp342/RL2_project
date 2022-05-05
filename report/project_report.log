@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  5 MAY 2022 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.14)  5 MAY 2022 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -370,14 +370,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
 )
-Package caption Info: Option `declare type' requires the `newfloat' package on input line 27.
+Package caption Info: Option `declare type' requires the `newfloat' package on input line 28.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 )
-Package newfloat Info: New float `equ' with options `' on input line 27.
+Package newfloat Info: New float `equ' with options `' on input line 28.
 \c@equ=\count320
 \newfloat@ftype=\count321
-Package newfloat Info: float type `equ'=8 on input line 27.
+Package newfloat Info: float type `equ'=8 on input line 28.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-10 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
@@ -385,24 +385,24 @@ File: l3backend-pdftex.def 2022-04-10 L3 backend support: PDF output (pdfTeX)
 ) (./project_report.aux)
 \openout1 = `project_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
@@ -472,7 +472,7 @@ File: fc-english.def 2016/01/12
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 78.
+Package hyperref Info: Link coloring OFF on input line 58.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -482,25 +482,25 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 78.
-LaTeX Info: Redefining \pageref on input line 78.
-LaTeX Info: Redefining \nameref on input line 78.
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
  (./project_report.out) (./project_report.out)
 \@outlinefile=\write3
 \openout3 = `project_report.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 78.
-Package microtype Info: Applying patch `item' on input line 78.
-Package microtype Info: Applying patch `toc' on input line 78.
-Package microtype Info: Applying patch `eqnum' on input line 78.
-Package microtype Info: Applying patch `footnote' on input line 78.
+LaTeX Info: Redefining \microtypecontext on input line 58.
+Package microtype Info: Applying patch `item' on input line 58.
+Package microtype Info: Applying patch `toc' on input line 58.
+Package microtype Info: Applying patch `eqnum' on input line 58.
+Package microtype Info: Applying patch `footnote' on input line 58.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 78.
+LaTeX Info: Redefining \showhyphens on input line 58.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -530,19 +530,19 @@ Package caption Info: End \AtBeginDocument code.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 81.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 61.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -550,28 +550,37 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images//simple_comm_environment.png, id=46, 771.88374pt x 663.47874pt>
+<images//simple_comm_environment.png, id=50, 771.88374pt x 663.47874pt>
 File: images//simple_comm_environment.png Graphic file (type png)
 <use images//simple_comm_environment.png>
-Package pdftex.def Info: images//simple_comm_environment.png  used on input line 96.
+Package pdftex.def Info: images//simple_comm_environment.png  used on input line 77.
 (pdftex.def)             Requested size: 192.97046pt x 165.86928pt.
-
-Underfull \vbox (badness 7238) has occurred while \output is active []
-
  [1
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images//simple_comm_environment.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 110.
+<images//Cycle_diagram.png, id=66, 458.9145pt x 434.22224pt>
+File: images//Cycle_diagram.png Graphic file (type png)
+<use images//Cycle_diagram.png>
+Package pdftex.def Info: images//Cycle_diagram.png  used on input line 90.
+(pdftex.def)             Requested size: 229.45668pt x 217.11058pt.
+ [2
+
+ <./images//Cycle_diagram.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 153.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2]
-<images//clipping_graph.png, id=104, 362.5545pt x 115.02975pt>
+) [3]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 196.
+
+<images//clipping_graph.png, id=117, 362.5545pt x 115.02975pt>
 File: images//clipping_graph.png Graphic file (type png)
 <use images//clipping_graph.png>
-Package pdftex.def Info: images//clipping_graph.png  used on input line 179.
+Package pdftex.def Info: images//clipping_graph.png  used on input line 255.
 (pdftex.def)             Requested size: 362.55362pt x 115.02946pt.
- [3 <./images//clipping_graph.png>] (./project_report.bbl [4]
+[4] [5 <./images//clipping_graph.png>] (./project_report.bbl [6]
 Underfull \hbox (badness 1097) in paragraph at lines 107--118
 []\T1/ptm/m/n/10 (+20) Sutton, R.S., McAllester, D., Singh, S. and Man-sour, Y., 1999.  Pol-icy gra-di-ent meth-
  []
@@ -591,23 +600,23 @@ Underfull \hbox (badness 5431) in paragraph at lines 107--118
 \T1/ptm/m/n/10 (+20) vol. 12.  Avail-able from: []$\T1/cmtt/m/n/10 https : / / proceedings . neurips . cc / paper / 1999 / file /
  []
 
-) [5] [6] (./project_report.aux)
+) [7] [8] (./project_report.aux)
 Package rerunfilecheck Info: File `project_report.out' has not changed.
-(rerunfilecheck)             Checksum: A42D5DD0C843F2AD91DA2DB892FBBFF3;1108.
+(rerunfilecheck)             Checksum: 4AA4888B07E5B9813499150197FCBBA0;1246.
  ) 
 Here is how much of TeX's memory you used:
- 15415 strings out of 478238
- 250049 string characters out of 5843947
- 597408 words of memory out of 5000000
- 33236 multiletter control sequences out of 15000+600000
- 499770 words of font info for 143 fonts, out of 8000000 for 9000
+ 15448 strings out of 478238
+ 250586 string characters out of 5843947
+ 599549 words of memory out of 5000000
+ 33247 multiletter control sequences out of 15000+600000
+ 500290 words of font info for 151 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,9n,117p,1077b,455s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,14n,117p,1077b,471s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on project_report.pdf (6 pages, 230449 bytes).
+Output written on project_report.pdf (8 pages, 268617 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 34907 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 262 PDF objects out of 1000 (max. 8388607)
+ 214 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 34920 words of extra memory for PDF output out of 35830 (max. 10000000)
 
