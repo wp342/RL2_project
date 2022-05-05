@@ -1,0 +1,261 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+% \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading rl_project.
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+ \usepackage[final]{rl_project}
+
+% to avoid loading the natbib package, add option nonatbib:
+% \usepackage[nonatbib]{rl_project}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{amsmath}
+
+\graphicspath{{images/}}
+\DeclareCaptionType{equ}[][]
+% Give your project report an appropriate title!
+
+\title{RL Project: Investigation into the use of DQN and PPO in a multi-agent environment}
+
+
+% The \author macro works with any number of authors. There are two
+% commands used to separate the names and addresses of multiple
+% authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to
+% break the lines. Using \AND forces a line break at that point. So,
+% if LaTeX puts 3 of 4 authors names on the first line, and the last
+% on the second line, try using \AND instead of \And before the third
+% author name.
+
+\author{
+  Steven Etches
+  \\
+  \texttt{spe24@bath.ac.uk} \\
+  %% examples of more authors
+  \And
+  Mark Hazell \\
+  \texttt{mph55@bath.ac.uk} \\
+  \And
+  Adam Rasool \\
+  \texttt{aar73@bath.ac.uk} \\
+  \And
+  Will Prior \\
+  \texttt{wp342@bath.ac.uk}
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Definition} \label{Problem Definition}
+
+The reinforcement learning problem that we have chosen to address is from the multi-agent reinforcement learning (MARL) environments provided in PettingZoo.ml by \citet{terry2020pettingzoo}.
+These environments represent a generalisation of a predator and prey type environment that has good agents and adversaries, with some of the more complex environments also incorporating landmarks and objects.
+The environment that has been chosen is the Simple World Comm scenario.
+Simple World Comm consists of six agents, two on the "good" team and four on the "adversary" team.
+Good agents are rewarded for proximity to a 'food' object(s), adversaries that are rewarded for collisions with good agents, and also there are two additional type of objects, a barrier that blocks the way and two 'shrubberies' that hide the position of the agents from observation.
+One of the adversary agents is leader adversary that can always see the location of the good agents and communicate that location to the other adversary agents.
+
+Good agents will attempt to maximise their reward by remaining proximal to the 'food' while also attempting to minimise the number of collisions with adversaries.
+Adversaries on the other hand will be focused on attempting to collide and remain as close as possible with the good agents.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{simple_comm_environment.png}
+  \caption{Simple Comm World Environment}
+  \label{fig:simple_comm_world}
+\end{figure}
+
+
+This project focuses on the application of the Deep Q Learning (DQN) and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
+Of particular interest will be contrasting the rate at which the two algorithms learn and also the rewards that their optimal policy results in.
+
+\section{Background} \label{Background}
+
+The first reinforcement methods we have consider for this problem are:
+
+\begin{itemize}
+    \item Deep-Q Network
+    \item REINFORCE
+    \item Advantage Actor-Critic (A2C)
+    \item Proximal Policy Optimisation (PPO)
+\end{itemize}
+
+The Deep-Q Network algorithm was first developed by Deep Mind in 2015 \citet{Mnih2015}.
+This uses a combination of the reinforcement algorithm, Q-learning, and deep neural networks.
+It has been implemented on many Atari games in the OpenAI gym and achieved levels far exceeding human capabilities \citet{Mnih2015}.
+
+Algorithms that follow a value-function approach whilst performing well in some deterministic environments have been shown to be unable to converge to approximate a stochastic policy \citet{AdvanacesinNIPS}.
+The REINFORCE algorithm is a type of policy gradient algorithm that provide unbiased estimates of gradient but without the learned value function and are able to make weight adjustments in the direction of gradient reinforcement \citet{Williams1992}.
+Whilst this is appropriate for our stochastic environment, the main weakness is the long time required to train the agents. For example when implemented on Pong and Lunar Lander it reportedly took 96 hours when running on cloud GPU \textcolor{red}{(Noufal, 2022) (Change this citation to a proper latex one)}.
+
+A further group of policy gradient based algorithms which may be applied to this problem are proximal policy optimisation (PPO) algorithms as discussed by \citet{PPOAlgo}.
+This family of algorithms avoids excessively large policy updates by considering a policy ratio between the new and old policies and ensuring that this ratio stays within an acceptable range $1\pm\varepsilon$ where $\varepsilon$ is a hyperparameter.
+Owing to their relative simplicity in addition to their effectiveness \citet{PPOmultiagentgames}, these algorithms are popular, with research available which extends their application to multi-agent systems such as that discussed in \citet{PPOAlgo} which outlines the multi-agent PPO algorithm MAPPO.
+
+In a like manner to the extension of the single-agent PPO algorithm to a multi-agent problem cited above, \citet{9263738} propose a modification to the advantage actor-critic (A2C) algorithm.
+The vanilla A2C algorithm utilises two neural networks, one to optimise on the basis of policy and a second to optimise value; respectively controlling agent behaviour and providing a measure of how 'good' the agent's actions are.
+The modified algorithm proposed in this work applies this philosophy to a cooperative multi-agent problem and produces very promising results in the author's testing.
+It is noted however that “… the algorithm has the caveat of only being able to be used when the agents are fully cooperative without any special predefined roles between them”. \textcolor{red}{(Terry et al., 2022) (Change this citation to a proper latex one)}
+
+\section{Method} \label{Method}
+
+\subsection{Deep Q-Learning} \label{DQN-Method}
+
+\subsection{Actor Critic} \label{A2C-Method}
+
+Touched upon in Section \ref{Background}, PPO algorithms are policy gradient algorithms which aim to produce better results by limiting an agent’s learning rate.
+These algorithms curb changes to policy, preventing a new policy from deviating too far from the one that preceded it.
+This is achieved through modification of the objective function.
+For the PPO-clip algorithm this is given by:
+
+\begin{equ}[!ht]
+  \begin{equation}
+    L^{CLIP}\theta = \hat{\mathbb{E}}[min(r(\theta)\hat{A_t},clip(r_t(\theta),1-\epsilon,1+\epsilon)\hat{A_t})]
+  \end{equation}
+  \caption*{Clipped Surrogate Objective \citet{PPOAlgo}}
+\end{equ}
+
+Where the advantage function $A^t$ is given by a truncated version of the Generalized Advantage Function (GAE)
+
+\begin{equ}[!ht]
+  \begin{equation}
+    \begin{aligned}
+    A^t & = \delta_t + (\gamma\lambda)\delta_{t+1}+...+...+(\gamma\lambda)^{T-t+1}\delta_{T-1},\\
+        & where\, \delta_t = r_t +\gamma V(S_{t+1})-V(s_t)\\
+        &  \lambda = smoothing factor
+    \end{aligned}
+  \end{equation}
+  \caption*{Truncated GAE \citet{PPOAlgo}}
+\end{equ}
+
+And $R_t(\theta)$ is the ratio
+
+\begin{equ}[!ht]
+  \begin{equation}
+    \frac{\pi_\theta(a|s)}{\pi_{\theta_{old}}(a|s)}
+  \end{equation}
+\end{equ}
+
+of the new policy to the previous.
+The first term in the above Clipped Surrogate Objective function gives the normal policy gradient objective, the second gives us a clipped policy gradient objective.
+The latter is equivalent to the former with the additional application of a clipping operation within the range of $1\pm\epsilon$ for hyperparameter $\epsilon$.
+This clipping operation is visualised below.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=1]{clipping_graph.png}
+  \caption{Plots showing one term (i.e., a single timestep) of the surrogate function LCLIP as a function of the probability ratio r, for positive advantages (left) and negative advantages (right).
+          The red circle on each plot shows the starting point for the optimization, i.e., r = 1.
+          Note that LCLIP sums many of these terms.” \citet{PPOAlgo}}
+  \label{fig:clip_graph}
+\end{figure}
+
+A minimum is then computed over these two terms; in this way, the growth of $r_t(\theta)$ is constrained by an upper bound and the policy cannot change excessively after a single alteration.
+This helps to stabilize training via constraining the policy changes at each step. This is useful as our gradient is only an approximation so trajectories which have high variance and large steps could be harmful to the policy.
+Because of this PPO can performs multiple epochs of minibatch updates, compared to a single policy gradient update per data sample in usual policy gradient methods.
+This allows for greater learning per data sample and therefore a greater learning performance.
+
+This algorithm has a number of strengths which make it particularly useful.
+Maintaining conservative policy updates as detailed above provides better sample efficiency allowing the algorithm to converge more easily on an optimum.
+Further, this algorithm was designed to be simpler to implement than the comparable Trust Region Policy Optimisation (TRPO) algorithm \citet{trustregionpolicy} which also provides better sample efficiency than previous policy gradient algorithms “and have better overall performance” \citet{PPOAlgo}.
+More relevant to this project, \citet{emergenttoolusage} have explored the application of this algorithm to a 'hide and seek' problem, producing positive results in an environment similar to that which is explored here.
+Given that this algorithm is known to perform well in a similar environment and the various strengths of the PPO-clip algorithm, it was chosen for further investigation in this project.
+
+\subsubsection{Implementation} \label{A2C-Implementation}
+
+The Simple World Comm environment was set up as described in Section \ref{Background}.
+Episodes were set to a length of 500 cycles.
+Each type of the agent type in the environment uses the same actor and critic network.
+Therefore, in the implementation of 1 lead adversary, 3 adversaries and 2 (good) agents there are 3 sets of actor and critic networks.
+The algorithm was run with the following hyper parameters:
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+  \textbf{Hyper Parameter}             & \textbf{Value}  \\ \hline
+  Discount Factor, $\gamma$   & 0.99   \\ \hline
+  Learning Rate, $\alpha$     & 0.0003 \\ \hline
+  Smoothing Factor, $\lambda$ & 0.95   \\ \hline
+  Policy Clip, $\epsilon$     & 0.2    \\ \hline
+  Batch Size                  & 20     \\ \hline
+  Mini-batch Size             & 5      \\ \hline
+  Number of epochs            & 4      \\ \hline
+  \end{tabular}
+  \caption{Actor Critic Hyper Parameter Values}
+\end{table}
+
+The actor and critic network had the same input neuron number, being the size of the agent's state space.
+They also had the same hidden layer structure consisting of 2, 256 neuron layers both with Rectified Linear Unit (relu) activation functions.
+The actor network having a dense output layer with the same number of neurons as the number of actions in the agent's action space and a SoftMax activation function giving an effective probability distribution of taking each action.
+The critic network has a single output with no activation function as it evaluates a particular state. They were both compiled and optimized with an Adam optimizer \citet{adam-optimiser} with the above learning rate, $\alpha$.
+
+A high-level program flow shows each agent to take an action based on their current policy.
+After this the current state, output of each actor and critic network, action taken and reward from taking the action are recorded.
+It was chosen that the learning part of the algorithm would be carried out every 20-time steps, using minibatches of 5 which are run for 4 epochs.
+This means that for every 20 steps taken the lead adversary has a single dataset to learn from, the adversaries have 3 and the agents have 2.
+It was chosen to be implemented this way instead of individual networks per agent, for the obvious reason that each policy network will learn more in the same number of learning steps for the agent and adversaries.
+
+\section{Results} \label{Results}
+
+\section{Discussion} \label{Discussion}
+
+We have produced two algorithms that have demonstrated reinforcement learning in a multi-agent, complex and competitive environment.
+The results also suggests the development of new strategies to maximise rewards, that is then countered/overcome by the opposing adversarial agents.
+The potentially mimics the evolutionary 'arms race' seen between competing organisms directed by natural selection \citet{armsrace}.
+
+\section{Future Work} \label{Future Work}
+
+Future work on this project could involve analysis of the strategies that have developed at specific episode intervals as has been documented in \citet{emergenttoolusage}.
+Possible examples of strategies might be the running and chasing of the agents and adversaries, the agents hiding in the 'shrubberies' to avoid detection, development of the adversary leader communicating locations to the other adversaries.
+At the moment only the rewards for each episode are recorded, but to allow analysis of the strategies monitoring of other in-episode parameters could be applied.
+Examples might be recording the amount of movement of the agents/ adversaries, distance of the agents to the 'shrubberies', communication and response of the adversaries.
+
+
+\section{Personal Experience} \label{Personal Experience}
+
+
+\bibliographystyle{bath}
+\bibliography{references}
+\small
+
+\normalsize
+\newpage
+\section*{Appendices}
+\subsection*{Appendix A: Example Appendix 1}
+\subsection*{Appendix B: Example Appendix 2}
+
+\end{document}

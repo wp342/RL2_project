@@ -1,0 +1,153 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{Available from: }
+\providecommand{\urldateprefix}{Accessed }
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Abadi et~al.(2015)Abadi, Agarwal, Barham, Brevdo, Chen, Citro,
+  Corrado, Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
+  Jozefowicz, Kaiser, Kudlur, Levenberg, Man\'{e}, Monga, Moore, Murray, Olah,
+  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
+  Vi\'{e}gas, Vinyals, Warden, Wattenberg, Wicke, Yu and
+  Zheng}]{adam-optimiser}
+\bibinfo{author}{Abadi, M.}, \bibinfo{author}{Agarwal, A.},
+  \bibinfo{author}{Barham, P.}, \bibinfo{author}{Brevdo, E.},
+  \bibinfo{author}{Chen, Z.}, \bibinfo{author}{Citro, C.},
+  \bibinfo{author}{Corrado, G.S.}, \bibinfo{author}{Davis, A.},
+  \bibinfo{author}{Dean, J.}, \bibinfo{author}{Devin, M.},
+  \bibinfo{author}{Ghemawat, S.}, \bibinfo{author}{Goodfellow, I.},
+  \bibinfo{author}{Harp, A.}, \bibinfo{author}{Irving, G.},
+  \bibinfo{author}{Isard, M.}, \bibinfo{author}{Jia, Y.},
+  \bibinfo{author}{Jozefowicz, R.}, \bibinfo{author}{Kaiser, L.},
+  \bibinfo{author}{Kudlur, M.}, \bibinfo{author}{Levenberg, J.},
+  \bibinfo{author}{Man\'{e}, D.}, \bibinfo{author}{Monga, R.},
+  \bibinfo{author}{Moore, S.}, \bibinfo{author}{Murray, D.},
+  \bibinfo{author}{Olah, C.}, \bibinfo{author}{Schuster, M.},
+  \bibinfo{author}{Shlens, J.}, \bibinfo{author}{Steiner, B.},
+  \bibinfo{author}{Sutskever, I.}, \bibinfo{author}{Talwar, K.},
+  \bibinfo{author}{Tucker, P.}, \bibinfo{author}{Vanhoucke, V.},
+  \bibinfo{author}{Vasudevan, V.}, \bibinfo{author}{Vi\'{e}gas, F.},
+  \bibinfo{author}{Vinyals, O.}, \bibinfo{author}{Warden, P.},
+  \bibinfo{author}{Wattenberg, M.}, \bibinfo{author}{Wicke, M.},
+  \bibinfo{author}{Yu, Y.} and \bibinfo{author}{Zheng, X.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{{TensorFlow} adam optimiser}.
+\newblock \bibinfo{note}{Tensorflow's Adam Optimiser}.
+\newblock
+  \urlprefix\url{https://www.tensorflow.org/api_docs/python/tf/keras/optimizers/Adam}.
+
+\bibitem[{Baker et~al.(2019)Baker, Kanitscheider, Markov, Wu, Powell, McGrew
+  and Mordatch}]{emergenttoolusage}
+\bibinfo{author}{Baker, B.}, \bibinfo{author}{Kanitscheider, I.},
+  \bibinfo{author}{Markov, T.}, \bibinfo{author}{Wu, Y.},
+  \bibinfo{author}{Powell, G.}, \bibinfo{author}{McGrew, B.} and
+  \bibinfo{author}{Mordatch, I.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Emergent tool use from multi-agent autocurricula}.
+\newblock \urlprefix\url{https://doi.org/10.48550/ARXIV.1909.07528}.
+
+\bibitem[{Dawkins and Krebs(1979)}]{armsrace}
+\bibinfo{author}{Dawkins, R.} and \bibinfo{author}{Krebs, J.R.},
+  \bibinfo{year}{1979}.
+\newblock \bibinfo{title}{Arms races between and within species}.
+\newblock \emph{\bibinfo{booktitle}{Proceedings of the royal society of london.
+  series b. biological sciences. royal society, 205(1161),}}.
+  pp.\bibinfo{pages}{489--511}.
+\newblock \urlprefix\url{https://doi.org/10.1098/rspb.1979.0081}.
+
+\bibitem[{Mnih et~al.(2015)Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare,
+  Graves, Riedmiller, Fidjeland, Ostrovski, Petersen, Beattie, Sadik,
+  Antonoglou, King, Kumaran, Wierstra, Legg and Hassabis}]{Mnih2015}
+\bibinfo{author}{Mnih, V.}, \bibinfo{author}{Kavukcuoglu, K.},
+  \bibinfo{author}{Silver, D.}, \bibinfo{author}{Rusu, A.A.},
+  \bibinfo{author}{Veness, J.}, \bibinfo{author}{Bellemare, M.G.},
+  \bibinfo{author}{Graves, A.}, \bibinfo{author}{Riedmiller, M.},
+  \bibinfo{author}{Fidjeland, A.K.}, \bibinfo{author}{Ostrovski, G.},
+  \bibinfo{author}{Petersen, S.}, \bibinfo{author}{Beattie, C.},
+  \bibinfo{author}{Sadik, A.}, \bibinfo{author}{Antonoglou, I.},
+  \bibinfo{author}{King, H.}, \bibinfo{author}{Kumaran, D.},
+  \bibinfo{author}{Wierstra, D.}, \bibinfo{author}{Legg, S.} and
+  \bibinfo{author}{Hassabis, D.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Human-level control through deep reinforcement
+  learning}.
+\newblock \emph{\bibinfo{journal}{Nature}},
+  \bibinfo{volume}{518}(\bibinfo{number}{7540}), \bibinfo{month}{Feb},
+  pp.\bibinfo{pages}{529--533}.
+\newblock \urlprefix\url{https://doi.org/10.1038/nature14236}.
+
+\bibitem[{Paczolay and Harmati(2020)}]{9263738}
+\bibinfo{author}{Paczolay, G.} and \bibinfo{author}{Harmati, I.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{A new advantage actor-critic algorithm for
+  multi-agent environments}.
+\newblock \emph{\bibinfo{booktitle}{2020 23rd international symposium on
+  measurement and control in robotics (ismcr)}}. pp.\bibinfo{pages}{1--6}.
+\newblock \urlprefix\url{https://doi.org/10.1109/ISMCR51255.2020.9263738}.
+
+\bibitem[{Schulman et~al.(2015)Schulman, Levine, Moritz, Jordan and
+  Abbeel}]{trustregionpolicy}
+\bibinfo{author}{Schulman, J.}, \bibinfo{author}{Levine, S.},
+  \bibinfo{author}{Moritz, P.}, \bibinfo{author}{Jordan, M.I.} and
+  \bibinfo{author}{Abbeel, P.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Trust region policy optimization}.
+\newblock \urlprefix\url{https://doi.org/10.48550/ARXIV.1502.05477}.
+
+\bibitem[{Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford and
+  Klimov}]{PPOAlgo}
+\bibinfo{author}{Schulman, J.}, \bibinfo{author}{Wolski, F.},
+  \bibinfo{author}{Dhariwal, P.}, \bibinfo{author}{Radford, A.} and
+  \bibinfo{author}{Klimov, O.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Proximal policy optimization algorithms}.
+\newblock \urlprefix\url{https://doi.org/10.48550/ARXIV.1707.06347}.
+
+\bibitem[{Sutton et~al.(1999)Sutton, McAllester, Singh and
+  Mansour}]{AdvanacesinNIPS}
+\bibinfo{author}{Sutton, R.S.}, \bibinfo{author}{McAllester, D.},
+  \bibinfo{author}{Singh, S.} and \bibinfo{author}{Mansour, Y.},
+  \bibinfo{year}{1999}.
+\newblock \bibinfo{title}{Policy gradient methods for reinforcement learning
+  with function approximation}.
+\newblock In: \bibinfo{editor}{S.~Solla}, \bibinfo{editor}{T.~Leen} and
+  \bibinfo{editor}{K.~M\"{u}ller}, eds. \emph{\bibinfo{booktitle}{Advances in
+  neural information processing systems}}. \bibinfo{publisher}{MIT Press},
+  vol.~\bibinfo{volume}{12}.
+\newblock
+  \urlprefix\url{https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf}.
+
+\bibitem[{Terry et~al.(2020)Terry, Black, Grammel, Jayakumar, Hari, Sulivan,
+  Santos, Perez, Horsch, Dieffendahl, Williams, Lokesh, Sullivan and
+  Ravi}]{terry2020pettingzoo}
+\bibinfo{author}{Terry, J.K.}, \bibinfo{author}{Black, B.},
+  \bibinfo{author}{Grammel, N.}, \bibinfo{author}{Jayakumar, M.},
+  \bibinfo{author}{Hari, A.}, \bibinfo{author}{Sulivan, R.},
+  \bibinfo{author}{Santos, L.}, \bibinfo{author}{Perez, R.},
+  \bibinfo{author}{Horsch, C.}, \bibinfo{author}{Dieffendahl, C.},
+  \bibinfo{author}{Williams, N.L.}, \bibinfo{author}{Lokesh, Y.},
+  \bibinfo{author}{Sullivan, R.} and \bibinfo{author}{Ravi, P.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Pettingzoo: Gym for multi-agent reinforcement
+  learning}.
+\newblock \emph{\bibinfo{journal}{arxiv preprint arxiv:2009.14471}}.
+
+\bibitem[{Williams(1992)}]{Williams1992}
+\bibinfo{author}{Williams, R.J.}, \bibinfo{year}{1992}.
+\newblock \bibinfo{title}{Simple statistical gradient-following algorithms for
+  connectionist reinforcement learning}.
+\newblock \emph{\bibinfo{journal}{Machine learning}},
+  \bibinfo{volume}{8}(\bibinfo{number}{3}), \bibinfo{month}{May},
+  pp.\bibinfo{pages}{229--256}.
+\newblock \urlprefix\url{https://doi.org/10.1007/BF00992696}.
+
+\bibitem[{Yu et~al.(2021)Yu, Velu, Vinitsky, Wang, Bayen and
+  Wu}]{PPOmultiagentgames}
+\bibinfo{author}{Yu, C.}, \bibinfo{author}{Velu, A.},
+  \bibinfo{author}{Vinitsky, E.}, \bibinfo{author}{Wang, Y.},
+  \bibinfo{author}{Bayen, A.} and \bibinfo{author}{Wu, Y.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{The surprising effectiveness of ppo in cooperative,
+  multi-agent games}.
+\newblock \urlprefix\url{https://doi.org/10.48550/ARXIV.2103.01955}.
+
+\end{thebibliography}
