@@ -80,39 +80,64 @@ Adversaries on the other hand will be focused on attempting to collide and remai
 \end{figure}
 
 
-\clearpage
-% \ref{fig:stepcycle}
-The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
+% \clearpage
+The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} found in Appendix A where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
 The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50.
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[scale=0.5]{Cycle_diagram.png}
-  \caption{Environment transition dynamics.}
-  \label{fig:stepcycle}
-\end{figure}
 
 The action spaces for each of the agents is as follows:
 
-\begin{table}[!ht]
-  \centering
-  \begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Good Agent &            &             &          &            \\ \hline
-  no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
-  \end{tabular}
-  \caption{Good agent action space}
-\end{table}
 
-\begin{table}[!h]
+% \begin{table}[!ht]
+  % \centering
+  % \begin{tabular}{|l|l|l|l|l|}
+  % \hline
+  % Good Agent &            &             &          &            \\ \hline
+  % no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
+  % \end{tabular}
+  % \captionof{table}{Good agent action space}
+% \end{table}
+
+% \begin{table}[!h]
+  % \centering
+  % \begin{tabular}{|l|l|l|l|l|}
+  % \hline
+  % Adversary Agent &            &             &          &            \\ \hline
+  % no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
+  % \end{tabular}
+  % \captionof{table}{Adversary agent action space}
+% \end{table}
+
+\begin{minipage}[c]{.5\linewidth}
   \centering
-  \begin{tabular}{|l|l|l|l|l|}
+  \begin{tabular}{|c|}
   \hline
-  Adversary Agent &            &             &          &            \\ \hline
-  no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
+  Good Agent  \\ \hline
+  no\_action  \\ \hline
+  move\_left  \\ \hline
+  move\_right \\ \hline
+  move\_up    \\ \hline
+  move\_down  \\ \hline
   \end{tabular}
-  \caption{Adversary agent action space}
-\end{table}
+  \captionof{table}{Good agent action space}
+\end{minipage}
+\begin{minipage}[c]{.5\linewidth}
+  \centering
+  \begin{tabular}{|c|}
+    \hline
+    Adversary Agent  \\ \hline
+    no\_action  \\ \hline
+    move\_left  \\ \hline
+    move\_right \\ \hline
+    move\_up    \\ \hline
+    move\_down  \\ \hline
+    \end{tabular}
+    \captionof{table}{Adversary agent action space}
+
+\end{minipage}
+
+
+
+
 
 \begin{table}[!h]
   \centering
@@ -162,7 +187,7 @@ It has been implemented on many Atari games in the OpenAI gym and achieved level
 
 Algorithms that follow a value-function approach whilst performing well in some deterministic environments have been shown to be unable to converge to approximate a stochastic policy \citet{AdvanacesinNIPS}.
 The REINFORCE algorithm is a type of policy gradient algorithm that provide unbiased estimates of gradient but without the learned value function and are able to make weight adjustments in the direction of gradient reinforcement \citet{Williams1992}.
-Whilst this is appropriate for our stochastic environment, the main weakness is the long time required to train the agents. For example when implemented on Pong and Lunar Lander it reportedly took 96 hours when running on cloud GPU \textcolor{red}{(Noufal, 2022) (Change this citation to a proper latex one)}.
+Whilst this is appropriate for our stochastic environment, the main weakness is the long time required to train the agents. For example when implemented on Pong and Lunar Lander it reportedly took 96 hours when running on cloud GPU \citet{REINFORCE}.
 
 A further group of policy gradient based algorithms which may be applied to this problem are proximal policy optimisation (PPO) algorithms as discussed by \citet{PPOAlgo}.
 This family of algorithms avoids excessively large policy updates by considering a policy ratio between the new and old policies and ensuring that this ratio stays within an acceptable range $1\pm\varepsilon$ where $\varepsilon$ is a hyperparameter.
@@ -171,7 +196,7 @@ Owing to their relative simplicity in addition to their effectiveness \citet{PPO
 In a like manner to the extension of the single-agent PPO algorithm to a multi-agent problem cited above, \citet{9263738} propose a modification to the advantage actor-critic (A2C) algorithm.
 The vanilla A2C algorithm utilises two neural networks, one to optimise on the basis of policy and a second to optimise value; respectively controlling agent behaviour and providing a measure of how 'good' the agent's actions are.
 The modified algorithm proposed in this work applies this philosophy to a cooperative multi-agent problem and produces very promising results in the author's testing.
-It is noted however that “… the algorithm has the caveat of only being able to be used when the agents are fully cooperative without any special predefined roles between them”. \textcolor{red}{(Terry et al., 2022) (Change this citation to a proper latex one)}
+It is noted however that “… the algorithm has the caveat of only being able to be used when the agents are fully cooperative without any special predefined roles between them”. \citet{terry2020pettingzoo}
 
 \section{Method} \label{Method}
 
@@ -185,11 +210,32 @@ This environment incentivises that adversary to both keep close to the landmark 
 
 \subsection{Deep Q-Learning} \label{DQN-Method}
 
+In traditional Q-learning the algorithm records the value of state-action pairs in what is known as a Q-table.
+Given a state the algorithm will first determine if it will explore randomly or taking an action which returns the maximum reward available (act greedily).
+If the choice to act greedily is made then a lookup will be made to the Q-table and if there are state-action pair values recorded it will choose the one in accordance to an action-value function.
+
+However as the state and action spaces grow in both scale and complexity it becomes increasingly difficult and impractical to attempt to capture every state-action pair in a tabular form.
+\citet{Mnih2015} instead proposed utilising a neural network to instead approximate the action-value function.
+By presenting the state to a neural network and then utilising the ouputs to approximate the action-value function makes it possible to apply a behavioural policy typical to traditional Q-learning algorithms to these more complex problems.
+
+The high levels of correlation present in reinforcement learning environments (each step is directly correlated to both the one before and after) can pose a problem to neural nets where they are prone to over fitting.
+To combat this experience replay was introduced where with each step a random batch of previous state, action, reward tuples is selected and used to train the net.
+By utilising this batch method of training it reduces the correlation between the data to reduce the chance of overfitting.
+
+Another issue that can effect DQN algorithms is that they can be unstable and prone to sudden changes if the error is too large when using a normal certain loss formulae such as mean squared error (mse).
+This tendency for large changes to be made to the network is mitigated by utilising a different loss formula such as the Huber Loss utilised in this project which less severely punishes large errors.
+
+A final technique to improve the accuracy of the neural net approximations is to use a fixed target network allowing for updates to be made towards a stationary target.
+This target network's weights are updated from the primary network every $C$ steps.
+
+
 \subsubsection{Implementation} \label{DQN-Implementation}
 
 Deep Q-Learning (DQN) was first developed utilising the Simple Push environment described in Section \ref{Method} allowing for quicker testing of the algorithm.
 
-
+For each environment each agent type shared a neural net.
+In Simple World Comm the adversary leader did not share a net, the three adversaries shared a single net, and the good agents shared a single net.
+By sharing the neural net between agent types it allowed the teams the benefit of learning from the actions that every agent on that team took and the rewards that earned.
 
 The final hyperparemters that the algorithm was run with were:
 
@@ -236,7 +282,7 @@ Where the advantage function $A^t$ is given by a truncated version of the Genera
   \end{equation}
   \caption*{Truncated GAE \citet{PPOAlgo}}
 \end{equ}
-
+\pagebreak
 And $R_t(\theta)$ is the ratio
 
 \begin{equ}[!ht]
@@ -329,6 +375,31 @@ Examples might be recording the amount of movement of the agents/ adversaries, d
 
 \section{Personal Experience} \label{Personal Experience}
 
+\subsection{Steven Etches}
+
+\subsection{Mark Hazell}
+
+In many ways a primary hallmark of my experience in this project has been one of frustration and waiting.
+I am used to being able to rapidly iterate on ideas and code however while implementing the DQN aglorithm I was often faced with long training times in the double digit hours to achieve a reasonable number of episodes.
+This often led to the completion of a training session before noticing some manner in which the algorithm could be improved for performance or not quite correct and having to repeat this training multiple times.
+However in spite of this I have learnt a lot about how to implement the algorithms discussed in this report as well as how to break down a more complex reinforcement learning problem into constituate parts (going from Simple World Comm to Simple Push) to prove that what is being implemented is indeed functional.
+
+
+\subsection{Adam Rasool}
+
+\subsection{Will Prior}
+
+My personal experience with the project started with deciding the project.
+We went for the later found to be rather ambitious task of a multi-agent environment.
+I was tasked with looking into the effectiveness of policy gradient algorithms on environment.
+After implementing both the REINFORCE and a basic actor-critic algorithm with no noticeable learning/ consistency in the results, we went back to the drawing board.
+In this we found the hide and seek paper that has been mentioned previously in the report which was a very similar experiment to that of our problem.
+In this it noted about how the use of PPO with GAE was an algorithm that worked well in the environment - it seemed logical to implement this in our environment.
+Which I did, giving the pleasant surprise of some nice learning curves as seen in the results section.
+Giving good performance for both simple push and simple world comm.
+This project was a very steep learning curve in how to implement neural nets using TensorFlow and keras, which took some time to get my head round the syntax and what was required in terms of activation functions number of neurons etc.
+However, I now feel I have a good grasp of this along with a rather advanced policy gradient method!
+
 
 \bibliographystyle{bath}
 \bibliography{references}
@@ -337,7 +408,17 @@ Examples might be recording the amount of movement of the agents/ adversaries, d
 \normalsize
 \newpage
 \section*{Appendices}
-\subsection*{Appendix A: Example Appendix 1}
+\subsection*{Appendix A: Environment Cycle}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.5]{Cycle_diagram.png}
+  \caption{Environment transition dynamics.}
+  \label{fig:stepcycle}
+\end{figure}
+
+
+
 \subsection*{Appendix B: Example Appendix 2}
 
 \end{document}

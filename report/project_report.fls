@@ -818,11 +818,6 @@ INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
-INPUT ./images//Cycle_diagram.png
-INPUT ./images//Cycle_diagram.png
-INPUT images//Cycle_diagram.png
-INPUT ./images//Cycle_diagram.png
-INPUT ./images//Cycle_diagram.png
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ptm.fd
@@ -841,6 +836,11 @@ INPUT project_report.bbl
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
+INPUT ./images//Cycle_diagram.png
+INPUT ./images//Cycle_diagram.png
+INPUT images//Cycle_diagram.png
+INPUT ./images//Cycle_diagram.png
+INPUT ./images//Cycle_diagram.png
 INPUT project_report.aux
 INPUT ./project_report.out
 INPUT ./project_report.out
