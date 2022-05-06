@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex project_report"] 1651839188 "project_report.aux" "project_report.bbl" "project_report" 1651839189
+["bibtex project_report"] 1651844233 "project_report.aux" "project_report.bbl" "project_report" 1651844234
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/bath-bst/bath.bst" 1646430277 52099 118b97e6aec539a8f986512d7ced700f ""
-  "project_report.aux" 1651839189 7546 fbb25ad130461d133c9cb67bb1ca6004 "pdflatex"
-  "references.bib" 1651790569 8869 c8363657fddd6cbca7bcaaef1ffd3122 ""
+  "project_report.aux" 1651844233 8016 5c08b63a0e1845008fd189817389df09 "pdflatex"
+  "references.bib" 1651844059 9092 3b8ca7bea722e63916a135f424abfc35 ""
   (generated)
   "project_report.bbl"
   "project_report.blg"
-["pdflatex"] 1651839188 "/home/breysyth/uni/basicds/dev/reinforcement_learn/project/report/project_report.tex" "project_report.pdf" "project_report" 1651839189
-  "/home/breysyth/uni/basicds/dev/reinforcement_learn/project/report/project_report.tex" 1651839186 24920 66c75eb9cef8e21ad2fec5f4e8e8263b ""
+["pdflatex"] 1651844233 "/home/breysyth/uni/basicds/dev/reinforcement_learn/project/report/project_report.tex" "project_report.pdf" "project_report" 1651844234
+  "/home/breysyth/uni/basicds/dev/reinforcement_learn/project/report/project_report.tex" 1651844231 25892 490116f7dd58a6548ff22698e960ecfc ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -129,14 +129,14 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1649953877 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1649953904 2828400 c5b3bfd83572bea34363c3cd05ee2f34 ""
   "/usr/local/texlive/2022/texmf.cnf" 1649953873 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "images//Cycle_diagram.png" 1651779849 39058 aaa3b4e4159fa1969e673fe4d72bb9f6 ""
-  "images//clipping_graph.png" 1651768374 11565 3410a171e363a7e99e04f34fa719d80a ""
-  "images//simple_comm_environment.png" 1651761431 68757 fc2d1f06b3d1afa86ad93c7275858aa8 ""
-  "project_report.aux" 1651839189 7546 fbb25ad130461d133c9cb67bb1ca6004 "pdflatex"
-  "project_report.bbl" 1651839188 8388 0e008929bf6392677a14feccf2ed276f "bibtex project_report"
-  "project_report.out" 1651839189 1715 38a4cdeee737211da4c10d41b5c487f0 "pdflatex"
-  "project_report.tex" 1651839186 24920 66c75eb9cef8e21ad2fec5f4e8e8263b ""
-  "rl_project.sty" 1651686209 11119 f793b8cf773b5e287a52b24957620f57 ""
+  "images//Cycle_diagram.png" 1651841024 39058 aaa3b4e4159fa1969e673fe4d72bb9f6 ""
+  "images//clipping_graph.png" 1651841024 11565 3410a171e363a7e99e04f34fa719d80a ""
+  "images//simple_comm_environment.png" 1651841024 68757 fc2d1f06b3d1afa86ad93c7275858aa8 ""
+  "project_report.aux" 1651844233 8016 5c08b63a0e1845008fd189817389df09 "pdflatex"
+  "project_report.bbl" 1651844233 8710 590459ea2a35d892904359d255767942 "bibtex project_report"
+  "project_report.out" 1651844233 1715 38a4cdeee737211da4c10d41b5c487f0 "pdflatex"
+  "project_report.tex" 1651844231 25892 490116f7dd58a6548ff22698e960ecfc ""
+  "rl_project.sty" 1651841024 11119 f793b8cf773b5e287a52b24957620f57 ""
   (generated)
   "project_report.aux"
   "project_report.log"

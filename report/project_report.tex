@@ -63,7 +63,7 @@
 
 The reinforcement learning problem that we have chosen to address is from the multi-agent reinforcement learning (MARL) environments provided in PettingZoo.ml by \citet{terry2020pettingzoo}.
 These environments represent a generalisation of a predator and prey type environment that has good agents and adversaries, with some of the more complex environments also incorporating landmarks and objects.
-The environment that has been chosen is the Simple World Comm scenario.
+The environment that has been chosen is the Simple World Comm scenario \citet{mordatch2017emergence}.
 
 Simple World Comm consists of six agents, two on the "good" team and four on the "adversary" team.
 Good agents are rewarded for proximity to a 'food' object(s), adversaries that are rewarded for collisions with good agents, and also there are two additional type of objects, a barrier that blocks the way and two 'shrubberies' that hide the position of the agents from observation.
@@ -71,6 +71,10 @@ One of the adversary agents is leader adversary that can always see the location
 
 Good agents will attempt to maximise their reward by remaining proximal to the 'food' while also attempting to minimise the number of collisions with adversaries.
 Adversaries on the other hand will be focused on attempting to collide and remain as close as possible with the good agents.
+
+While the environment exists on an infinite plain, the good agents are incentivised to not move too far away from the origin point by an increasingly large negative reward every step once a threshold is crossed proportional to the distance from the origin.
+Adversarial agents are not penalised in this manner but since they are already rewarded for attempting to collide with the good agents, if the good agents remain within the bounded area so should all of the adversaries.
+
 
 \begin{figure}[!ht]
   \centering
@@ -84,88 +88,15 @@ Adversaries on the other hand will be focused on attempting to collide and remai
 The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} found in Appendix A where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
 The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50.
 
-The action spaces for each of the agents is as follows:
+The adversary and good agents both share the same action of space of either taking no action or, moving in the cardinal directions.
+The adversary leader's action space is the product of the movement actions that the other agents have and also the ability to either not communicate or communicate with one of the other adversary agents.
+These actions spaces are detailed in tables \ref{tab:good-agent-action}, \ref{tab:adversary-agent-action}, and \ref{tab:adversary-leader-action} in Appendix A.
 
-
-% \begin{table}[!ht]
-  % \centering
-  % \begin{tabular}{|l|l|l|l|l|}
-  % \hline
-  % Good Agent &            &             &          &            \\ \hline
-  % no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
-  % \end{tabular}
-  % \captionof{table}{Good agent action space}
-% \end{table}
-
-% \begin{table}[!h]
-  % \centering
-  % \begin{tabular}{|l|l|l|l|l|}
-  % \hline
-  % Adversary Agent &            &             &          &            \\ \hline
-  % no\_action & move\_left & move\_right & move\_up & move\_down \\ \hline
-  % \end{tabular}
-  % \captionof{table}{Adversary agent action space}
-% \end{table}
-
-\begin{minipage}[c]{.5\linewidth}
-  \centering
-  \begin{tabular}{|c|}
-  \hline
-  Good Agent  \\ \hline
-  no\_action  \\ \hline
-  move\_left  \\ \hline
-  move\_right \\ \hline
-  move\_up    \\ \hline
-  move\_down  \\ \hline
-  \end{tabular}
-  \captionof{table}{Good agent action space}
-\end{minipage}
-\begin{minipage}[c]{.5\linewidth}
-  \centering
-  \begin{tabular}{|c|}
-    \hline
-    Adversary Agent  \\ \hline
-    no\_action  \\ \hline
-    move\_left  \\ \hline
-    move\_right \\ \hline
-    move\_up    \\ \hline
-    move\_down  \\ \hline
-    \end{tabular}
-    \captionof{table}{Adversary agent action space}
-
-\end{minipage}
-
-
-
-
-
-\begin{table}[!h]
-  \centering
-  \addtolength{\leftskip} {-2cm}
-  \addtolength{\rightskip}{-2cm}
-  \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    Adversary Leader  & say\_0                & say\_1                & say\_2                & say\_3                \\ \hline
-    no\_action  & (no\_action, say\_0)  & (no\_action, say\_1)  & (no\_action, say\_2)  & (no\_action, say\_3)  \\ \hline
-    move\_left  & (move\_left, say\_0)  & (move\_left, say\_1)  & (move\_left, say\_2)  & (move\_left, say\_3)  \\ \hline
-    move\_right & (move\_right, say\_0) & (move\_right, say\_1) & (move\_right, say\_2) & (move\_right, say\_3) \\ \hline
-    move\_up    & (move\_up, say\_0)    & (move\_up, say\_1)    & (move\_up, say\_2)    & (move\_up, say\_3)    \\ \hline
-    move\_down  & (move\_down, say\_0)  & (move\_down, say\_1)  & (move\_down, say\_2)  & (move\_down, say\_3)  \\ \hline
-    \end{tabular}
-    \caption{Adversary leader action space}
-  \end{table}
-
-The reward functions are as follows:
-
-\begin{table}[!h]
-  \centering
-  \begin{tabular}{|l|l|l|l|}
-  \hline
-  Good Agent      & \begin{tabular}[c]{@{}l@{}}-5 per collision with \\ an adversary agent\end{tabular} & \begin{tabular}[c]{@{}l@{}}+2 per collision with\\ food object\end{tabular}   & \begin{tabular}[c]{@{}l@{}}-0.05 x min distance to\\ a good object\end{tabular} \\ \hline
-  Adversary Agent & \begin{tabular}[c]{@{}l@{}}+5 per collision with\\ a good agent.\end{tabular}       & \begin{tabular}[c]{@{}l@{}}-0.1 x min distance to\\ a good agent\end{tabular} &                                                                                 \\ \hline
-  \end{tabular}
-  \caption{Agent Rewards}
-  \end{table}
+Good agents are rewarded for both colliding with the food objects and also mantaining a position within close proximity of the food.
+The reward for being proximal to the food decreasing with distance.
+Good agents are punished with a negative reward colliding with adversaries.
+Adveraries are rewarded for colliding with good agents while earning a punishment each step in the form of a negative reward proportional to how close good agents are to the food.
+More details on the reward sructure of the environment can be found in table \ref{tab:agent-rewards} in Appendix A
 
 This project focuses on the application of the Deep Q Learning (DQN) and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
 Of particular interest will be contrasting the rate at which the two algorithms learn and also the rewards that their optimal policy results in.
@@ -417,7 +348,71 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
   \label{fig:stepcycle}
 \end{figure}
 
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|c|}
+  \hline
+  Good Agent  \\ \hline
+  no\_action  \\ \hline
+  move\_left  \\ \hline
+  move\_right \\ \hline
+  move\_up    \\ \hline
+  move\_down  \\ \hline
+\end{tabular}
+\caption{table}{Good agent action space}
+\label{tab:good-agent-action}
 
+\end{table}
+
+
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|c|}
+    \hline
+    Adversary Agent  \\ \hline
+    no\_action  \\ \hline
+    move\_left  \\ \hline
+    move\_right \\ \hline
+    move\_up    \\ \hline
+    move\_down  \\ \hline
+    \end{tabular}
+    \caption{Adversary agent action space}
+    \label{tab:adversary-agent-action}
+  \end{table}
+
+
+
+\begin{table}[!ht]
+  \centering
+  \addtolength{\leftskip} {-2cm}
+  \addtolength{\rightskip}{-2cm}
+  \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    Adversary Leader  & say\_0                & say\_1                & say\_2                & say\_3                \\ \hline
+    no\_action  & (no\_action, say\_0)  & (no\_action, say\_1)  & (no\_action, say\_2)  & (no\_action, say\_3)  \\ \hline
+    move\_left  & (move\_left, say\_0)  & (move\_left, say\_1)  & (move\_left, say\_2)  & (move\_left, say\_3)  \\ \hline
+    move\_right & (move\_right, say\_0) & (move\_right, say\_1) & (move\_right, say\_2) & (move\_right, say\_3) \\ \hline
+    move\_up    & (move\_up, say\_0)    & (move\_up, say\_1)    & (move\_up, say\_2)    & (move\_up, say\_3)    \\ \hline
+    move\_down  & (move\_down, say\_0)  & (move\_down, say\_1)  & (move\_down, say\_2)  & (move\_down, say\_3)  \\ \hline
+    \end{tabular}
+    \caption{Adversary leader action space}
+    \label{tab:adversary-leader-action}
+  \end{table}
+
+
+  \begin{table}[!ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    Good Agent      & \begin{tabular}[c]{@{}l@{}}-5 per collision with \\ an adversary agent\end{tabular} & \begin{tabular}[c]{@{}l@{}}+2 per collision with\\ food object\end{tabular}   & \begin{tabular}[c]{@{}l@{}}-0.05 x min distance to\\ a good object\end{tabular} \\ \hline
+    Adversary Agent & \begin{tabular}[c]{@{}l@{}}+5 per collision with\\ a good agent.\end{tabular}       & \begin{tabular}[c]{@{}l@{}}-0.1 x min distance to\\ a good agent\end{tabular} &                                                                                 \\ \hline
+    \end{tabular}
+    \caption{Agent Rewards}
+    \label{tab:agent-rewards}
+    \end{table}
+
+
+\clearpage
 
 \subsection*{Appendix B: Example Appendix 2}
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{Available from: }
@@ -76,6 +76,13 @@
   \bibinfo{volume}{518}(\bibinfo{number}{7540}), \bibinfo{month}{Feb},
   pp.\bibinfo{pages}{529--533}.
 \newblock \urlprefix\url{https://doi.org/10.1038/nature14236}.
+
+\bibitem[{Mordatch and Abbeel(2017)}]{mordatch2017emergence}
+\bibinfo{author}{Mordatch, I.} and \bibinfo{author}{Abbeel, P.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Emergence of grounded compositional language in
+  multi-agent populations}.
+\newblock \emph{\bibinfo{journal}{arxiv preprint arxiv:1703.04908}}.
 
 \bibitem[{Noufal(2020)}]{REINFORCE}
 \bibinfo{author}{Noufal, S.}, \bibinfo{year}{2020}.
