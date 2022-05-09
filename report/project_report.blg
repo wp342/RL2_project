@@ -1,8 +1,10 @@
-This is BibTeX, Version 0.99d (TeX Live 2022)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: project_report.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
 The style file: bath.bst
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: references.bib
 You've used 13 entries,
             5712 wiz_defined-function locations,

@@ -61,7 +61,7 @@
 
 \section{Problem Definition} \label{Problem Definition}
 
-The reinforcement learning problem that we have chosen to address is from the multi-agent reinforcement learning (MARL) environments provided in PettingZoo.ml by \citet{terry2020pettingzoo}.
+The reinforcement learning problem that we have chosen to address is from the multiagent reinforcement learning (MARL) environments provided in PettingZoo.ml by \citet{terry2020pettingzoo}.
 These environments represent a generalisation of a predator and prey type environment that has good agents and adversaries, with some of the more complex environments also incorporating landmarks and objects.
 The environment that has been chosen is the Simple World Comm scenario \citet{mordatch2017emergence}.
 
@@ -86,17 +86,18 @@ Adversarial agents are not penalised in this manner but since they are already r
 
 % \clearpage
 The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} found in Appendix A where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
-The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50.
+The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50 depending on the algorithm used. 
+This difference was primarily dictated by training time.
 
 The adversary and good agents both share the same action of space of either taking no action or, moving in the cardinal directions.
 The adversary leader's action space is the product of the movement actions that the other agents have and also the ability to either not communicate or communicate with one of the other adversary agents.
 These actions spaces are detailed in tables \ref{tab:good-agent-action}, \ref{tab:adversary-agent-action}, and \ref{tab:adversary-leader-action} in Appendix A.
 
-Good agents are rewarded for both colliding with the food objects and also mantaining a position within close proximity of the food.
+Good agents are rewarded for both colliding with the food objects and also maintaining a position within close proximity of the food.
 The reward for being proximal to the food decreasing with distance.
 Good agents are punished with a negative reward colliding with adversaries.
-Adveraries are rewarded for colliding with good agents while earning a punishment each step in the form of a negative reward proportional to how close good agents are to the food.
-More details on the reward sructure of the environment can be found in table \ref{tab:agent-rewards} in Appendix A
+Adversaries are rewarded for colliding with good agents while earning a punishment each step in the form of a negative reward proportional to how close good agents are to the food.
+More details on the reward structure of the environment can be found in table \ref{tab:agent-rewards} in Appendix A
 
 This project focuses on the application of the Deep Q Learning (DQN) and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
 Of particular interest will be contrasting the rate at which the two algorithms learn and also the rewards that their optimal policy results in.
@@ -338,8 +339,32 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
 
 \normalsize
 \newpage
+
 \section*{Appendices}
 \subsection*{Appendix A: Environment Cycle}
+
+Simple World Comm consists of six agents, two on the "good" team and four on the "adversary" team.
+Good agents are rewarded for proximity to a 'food' object(s), adversaries that are rewarded for collisions with good agents, and also there are two additional type of objects, a barrier that blocks the way and two 'shrubberies' that hide the position of the agents from observation.
+One of the adversary agents is leader adversary that can always see the location of the good agents and communicate that location to the other adversary agents.
+
+Good agents will attempt to maximise their reward by remaining proximal to the 'food' while also attempting to minimise the number of collisions with adversaries.
+Adversaries on the other hand will be focused on attempting to collide and remain as close as possible with the good agents.
+
+While the environment exists on an infinite plain, the good agents are incentivised to not move too far away from the origin point by an increasingly large negative reward every step once a threshold is crossed proportional to the distance from the origin.
+Adversarial agents are not penalised in this manner but since they are already rewarded for attempting to collide with the good agents, if the good agents remain within the bounded area so should all of the adversaries.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[scale=0.25]{simple_comm_environment.png}
+  \caption{Simple Comm World Environment}
+  \label{fig:simple_comm_world_2}
+\end{figure}
+
+The transition dynamics for the environment is a cycle as depicted in figure \ref{fig:stepcycle} found in Appendix A where each agent gets to take an action, once all agents have acted that step can be considered completed beginning a new step and cycle.
+The default episode length for the environments is 25 steps however this was extended in this project to a minimum length of 50 depending on the algorithm used. 
+This difference was primarily dictated by training time.
+
+\clearpage
 
 \begin{figure}[!ht]
   \centering
@@ -347,6 +372,8 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
   \caption{Environment transition dynamics.}
   \label{fig:stepcycle}
 \end{figure}
+
+The adversary and good agents both share the same action of space of either taking no action or, moving in the cardinal directions.
 
 \begin{table}[!ht]
   \centering
@@ -361,9 +388,7 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
 \end{tabular}
 \caption{table}{Good agent action space}
 \label{tab:good-agent-action}
-
 \end{table}
-
 
 \begin{table}[!ht]
   \centering
@@ -380,7 +405,7 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
     \label{tab:adversary-agent-action}
   \end{table}
 
-
+  The adversary leader's action space is the product of the movement actions that the other agents have and also the ability to either not communicate or communicate with one of the other adversary agents.
 
 \begin{table}[!ht]
   \centering
@@ -399,6 +424,10 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
     \label{tab:adversary-leader-action}
   \end{table}
 
+  Good agents are rewarded for both colliding with the food objects and also maintaining a position within close proximity of the food.
+  The reward for being proximal to the food decreasing with distance.
+  Good agents are punished with a negative reward colliding with adversaries.
+  Adversaries are rewarded for colliding with good agents while earning a punishment each step in the form of a negative reward proportional to how close good agents are to the food.
 
   \begin{table}[!ht]
     \centering
@@ -410,7 +439,6 @@ However, I now feel I have a good grasp of this along with a rather advanced pol
     \caption{Agent Rewards}
     \label{tab:agent-rewards}
     \end{table}
-
 
 \clearpage
 
