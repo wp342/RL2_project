@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.5.7)  9 MAY 2022 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.5.7)  11 MAY 2022 19:20
 entering extended mode
 **c:/Users/Mark/Documents/GitHub/RL2_project/report/project_report.tex
 (c:/Users/Mark/Documents/GitHub/RL2_project/report/project_report.tex
@@ -368,14 +368,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-Package caption Info: Option `declare type' requires the `newfloat' package on input line 28.
+Package caption Info: Option `declare type' requires the `newfloat' package on input line 31.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/newfloat\newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 )
-Package newfloat Info: New float `equ' with options `' on input line 28.
+Package newfloat Info: New float `equ' with options `' on input line 31.
 \c@equ=\count317
 \newfloat@ftype=\count318
-Package newfloat Info: float type `equ'=8 on input line 28.
+Package newfloat Info: float type `equ'=8 on input line 31.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
@@ -383,24 +383,24 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 ) (project_report.aux)
 \openout1 = `project_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-english.def
 File: fc-english.def 2016/01/12
 )
@@ -470,7 +470,7 @@ File: fc-english.def 2016/01/12
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 61.
 (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -480,25 +480,25 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
  (project_report.out) (project_report.out)
 \@outlinefile=\write3
 \openout3 = `project_report.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 58.
-Package microtype Info: Applying patch `item' on input line 58.
-Package microtype Info: Applying patch `toc' on input line 58.
-Package microtype Info: Applying patch `eqnum' on input line 58.
-Package microtype Info: Applying patch `footnote' on input line 58.
+LaTeX Info: Redefining \microtypecontext on input line 61.
+Package microtype Info: Applying patch `item' on input line 61.
+Package microtype Info: Applying patch `toc' on input line 61.
+Package microtype Info: Applying patch `eqnum' on input line 61.
+Package microtype Info: Applying patch `footnote' on input line 61.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 58.
+LaTeX Info: Redefining \showhyphens on input line 61.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -528,19 +528,19 @@ Package caption Info: End \AtBeginDocument code.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 61.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 66.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -548,10 +548,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images//simple_comm_environment.png, id=67, 771.88374pt x 663.47874pt>
+<images//simple_comm_environment.png, id=59, 771.88374pt x 663.47874pt>
 File: images//simple_comm_environment.png Graphic file (type png)
 <use images//simple_comm_environment.png>
-Package pdftex.def Info: images//simple_comm_environment.png  used on input line 81.
+Package pdftex.def Info: images//simple_comm_environment.png  used on input line 86.
 (pdftex.def)             Requested size: 192.97046pt x 165.86928pt.
 
 Underfull \vbox (badness 1127) has occurred while \output is active []
@@ -560,53 +560,78 @@ Underfull \vbox (badness 1127) has occurred while \output is active []
 
 
 {C:/Users/Mark/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./images//simple_comm_environment.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 110.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 115.
  (C:\Users\Mark\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 174.
-
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-<images//clipping_graph.png, id=159, 362.5545pt x 115.02975pt>
+<images//Huber_loss.png, id=123, 722.7pt x 542.025pt>
+File: images//Huber_loss.png Graphic file (type png)
+<use images//Huber_loss.png>
+Package pdftex.def Info: images//Huber_loss.png  used on input line 165.
+(pdftex.def)             Requested size: 216.81166pt x 162.60875pt.
+ [3 <./images//Huber_loss.png>]
+<images//clipping_graph.png, id=146, 362.5545pt x 115.02975pt>
 File: images//clipping_graph.png Graphic file (type png)
 <use images//clipping_graph.png>
-Package pdftex.def Info: images//clipping_graph.png  used on input line 233.
+Package pdftex.def Info: images//clipping_graph.png  used on input line 227.
 (pdftex.def)             Requested size: 362.55362pt x 115.02946pt.
- [5 <./images//clipping_graph.png>] [6] (project_report.bbl [7]
-Underfull \hbox (badness 1097) in paragraph at lines 122--133
+ [4]
+<images//simple_push_DQN.png, id=180, 383.031pt x 207.174pt>
+File: images//simple_push_DQN.png Graphic file (type png)
+<use images//simple_push_DQN.png>
+Package pdftex.def Info: images//simple_push_DQN.png  used on input line 278.
+(pdftex.def)             Requested size: 198.7425pt x 107.49716pt.
+<images//simple_push_PPO.png, id=181, 383.031pt x 207.174pt>
+File: images//simple_push_PPO.png Graphic file (type png)
+<use images//simple_push_PPO.png>
+Package pdftex.def Info: images//simple_push_PPO.png  used on input line 287.
+(pdftex.def)             Requested size: 198.7425pt x 107.49716pt.
+ [5 <./images//clipping_graph.png>]
+<images//simple_world_comm_DQN.png, id=192, 383.031pt x 215.00325pt>
+File: images//simple_world_comm_DQN.png Graphic file (type png)
+<use images//simple_world_comm_DQN.png>
+Package pdftex.def Info: images//simple_world_comm_DQN.png  used on input line 309.
+(pdftex.def)             Requested size: 198.7425pt x 111.55956pt.
+<images//simple_world_comm_PPO.png, id=193, 383.031pt x 215.00325pt>
+File: images//simple_world_comm_PPO.png Graphic file (type png)
+<use images//simple_world_comm_PPO.png>
+Package pdftex.def Info: images//simple_world_comm_PPO.png  used on input line 318.
+(pdftex.def)             Requested size: 198.7425pt x 111.55956pt.
+<images//strat_development.PNG, id=194, 368.577pt x 205.9695pt>
+File: images//strat_development.PNG Graphic file (type png)
+<use images//strat_development.PNG>
+Package pdftex.def Info: images//strat_development.PNG  used on input line 346.
+(pdftex.def)             Requested size: 258.00212pt x 144.17764pt.
+ [6 <./images//simple_push_DQN.png> <./images//simple_push_PPO.png> <./images//simple_world_comm_DQN.png> <./images//simple_world_comm_PPO.png> <./images//strat_development.PNG>] (project_report.bbl [7]
+Underfull \hbox (badness 1097) in paragraph at lines 129--140
 []\T1/ptm/m/n/10 (+20) Sutton, R.S., McAllester, D., Singh, S. and Man-sour, Y., 1999.  Pol-icy gra-di-ent meth-
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 122--133
+Underfull \hbox (badness 1715) in paragraph at lines 129--140
 \T1/ptm/m/n/10 (+20) ods for re-in-force-ment learn-ing with func-tion ap-prox-i-ma-tion.  In: S. Solla, T. Leen
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 122--133
+Underfull \hbox (badness 2384) in paragraph at lines 129--140
 \T1/ptm/m/n/10 (+20) and K. Müller, eds. \T1/ptm/m/it/10 (+20) Ad-vances in neu-ral in-for-ma-tion pro-cess-ing sys-tems\T1/ptm/m/n/10 (+20) . MIT Press,
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 122--133
+Underfull \hbox (badness 5431) in paragraph at lines 129--140
 \T1/ptm/m/n/10 (+20) vol. 12.  Avail-able from: []$\T1/cmtt/m/n/10 https : / / proceedings . neurips . cc / paper / 1999 / file /
  []
 
 ) [8]
 File: images//simple_comm_environment.png Graphic file (type png)
 <use images//simple_comm_environment.png>
-Package pdftex.def Info: images//simple_comm_environment.png  used on input line 358.
+Package pdftex.def Info: images//simple_comm_environment.png  used on input line 430.
 (pdftex.def)             Requested size: 192.97046pt x 165.86928pt.
  [9]
-<images//Cycle_diagram.png, id=229, 458.9145pt x 434.22224pt>
+<images//Cycle_diagram.png, id=248, 458.9145pt x 434.22224pt>
 File: images//Cycle_diagram.png Graphic file (type png)
 <use images//Cycle_diagram.png>
-Package pdftex.def Info: images//Cycle_diagram.png  used on input line 371.
+Package pdftex.def Info: images//Cycle_diagram.png  used on input line 443.
 (pdftex.def)             Requested size: 229.45668pt x 217.11058pt.
  [10
 
@@ -614,20 +639,20 @@ Package pdftex.def Info: images//Cycle_diagram.png  used on input line 371.
 
 ] (project_report.aux)
 Package rerunfilecheck Info: File `project_report.out' has not changed.
-(rerunfilecheck)             Checksum: 38A4CDEEE737211DA4C10D41B5C487F0;1715.
+(rerunfilecheck)             Checksum: 6D59F5BFAA0D0764EDE5576DC2228E6B;1637.
  ) 
 Here is how much of TeX's memory you used:
- 14907 strings out of 478868
- 231754 string characters out of 2849284
- 601143 words of memory out of 3000000
- 32353 multiletter control sequences out of 15000+600000
- 435111 words of font info for 160 fonts, out of 8000000 for 9000
+ 14972 strings out of 478868
+ 233527 string characters out of 2849284
+ 603229 words of memory out of 3000000
+ 32405 multiletter control sequences out of 15000+600000
+ 435241 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,14n,117p,1061b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,14n,117p,1061b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sftt1000.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on project_report.pdf (12 pages, 312776 bytes).
+Output written on project_report.pdf (12 pages, 597007 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 34952 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 34966 words of extra memory for PDF output out of 35830 (max. 10000000)
 
