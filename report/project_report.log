@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.5.7)  11 MAY 2022 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2022.5.7)  12 MAY 2022 11:45
 entering extended mode
 **c:/Users/Mark/Documents/GitHub/RL2_project/report/project_report.tex
 (c:/Users/Mark/Documents/GitHub/RL2_project/report/project_report.tex
@@ -576,33 +576,43 @@ File: images//clipping_graph.png Graphic file (type png)
 Package pdftex.def Info: images//clipping_graph.png  used on input line 227.
 (pdftex.def)             Requested size: 362.55362pt x 115.02946pt.
  [4]
-<images//simple_push_DQN.png, id=180, 383.031pt x 207.174pt>
-File: images//simple_push_DQN.png Graphic file (type png)
-<use images//simple_push_DQN.png>
-Package pdftex.def Info: images//simple_push_DQN.png  used on input line 278.
-(pdftex.def)             Requested size: 198.7425pt x 107.49716pt.
-<images//simple_push_PPO.png, id=181, 383.031pt x 207.174pt>
-File: images//simple_push_PPO.png Graphic file (type png)
-<use images//simple_push_PPO.png>
-Package pdftex.def Info: images//simple_push_PPO.png  used on input line 287.
-(pdftex.def)             Requested size: 198.7425pt x 107.49716pt.
- [5 <./images//clipping_graph.png>]
-<images//simple_world_comm_DQN.png, id=192, 383.031pt x 215.00325pt>
-File: images//simple_world_comm_DQN.png Graphic file (type png)
-<use images//simple_world_comm_DQN.png>
-Package pdftex.def Info: images//simple_world_comm_DQN.png  used on input line 309.
-(pdftex.def)             Requested size: 198.7425pt x 111.55956pt.
-<images//simple_world_comm_PPO.png, id=193, 383.031pt x 215.00325pt>
-File: images//simple_world_comm_PPO.png Graphic file (type png)
-<use images//simple_world_comm_PPO.png>
-Package pdftex.def Info: images//simple_world_comm_PPO.png  used on input line 318.
-(pdftex.def)             Requested size: 198.7425pt x 111.55956pt.
+<images//push_DQN.png, id=180, 857.2025pt x 443.6575pt>
+File: images//push_DQN.png Graphic file (type png)
+<use images//push_DQN.png>
+Package pdftex.def Info: images//push_DQN.png  used on input line 280.
+(pdftex.def)             Requested size: 238.49341pt x 123.4312pt.
+<images//push_PPO.png, id=181, 857.2025pt x 443.6575pt>
+File: images//push_PPO.png Graphic file (type png)
+<use images//push_PPO.png>
+Package pdftex.def Info: images//push_PPO.png  used on input line 288.
+(pdftex.def)             Requested size: 238.49341pt x 123.4312pt.
+
+Overfull \hbox (52.94911pt too wide) in paragraph at lines 276--293
+ []|  $[]$$[]$ 
+ []
+
+[5 <./images//clipping_graph.png>]
+<images//world_comm_DQN.png, id=192, 911.405pt x 443.6575pt>
+File: images//world_comm_DQN.png Graphic file (type png)
+<use images//world_comm_DQN.png>
+Package pdftex.def Info: images//world_comm_DQN.png  used on input line 311.
+(pdftex.def)             Requested size: 238.49341pt x 116.09288pt.
+<images//world_comm_PPO.png, id=193, 911.405pt x 443.6575pt>
+File: images//world_comm_PPO.png Graphic file (type png)
+<use images//world_comm_PPO.png>
+Package pdftex.def Info: images//world_comm_PPO.png  used on input line 320.
+(pdftex.def)             Requested size: 238.49341pt x 116.09288pt.
+
+Overfull \hbox (52.94911pt too wide) in paragraph at lines 307--327
+ []|  $[]$$[]$ 
+ []
+
 <images//strat_development.PNG, id=194, 368.577pt x 205.9695pt>
 File: images//strat_development.PNG Graphic file (type png)
 <use images//strat_development.PNG>
-Package pdftex.def Info: images//strat_development.PNG  used on input line 346.
+Package pdftex.def Info: images//strat_development.PNG  used on input line 348.
 (pdftex.def)             Requested size: 258.00212pt x 144.17764pt.
- [6 <./images//simple_push_DQN.png> <./images//simple_push_PPO.png> <./images//simple_world_comm_DQN.png> <./images//simple_world_comm_PPO.png> <./images//strat_development.PNG>] (project_report.bbl [7]
+[6 <./images//push_DQN.png> <./images//push_PPO.png> <./images//world_comm_DQN.png> <./images//world_comm_PPO.png>] (project_report.bbl [7 <./images//strat_development.PNG>]
 Underfull \hbox (badness 1097) in paragraph at lines 129--140
 []\T1/ptm/m/n/10 (+20) Sutton, R.S., McAllester, D., Singh, S. and Man-sour, Y., 1999.  Pol-icy gra-di-ent meth-
  []
@@ -625,13 +635,13 @@ Underfull \hbox (badness 5431) in paragraph at lines 129--140
 ) [8]
 File: images//simple_comm_environment.png Graphic file (type png)
 <use images//simple_comm_environment.png>
-Package pdftex.def Info: images//simple_comm_environment.png  used on input line 430.
+Package pdftex.def Info: images//simple_comm_environment.png  used on input line 433.
 (pdftex.def)             Requested size: 192.97046pt x 165.86928pt.
  [9]
-<images//Cycle_diagram.png, id=248, 458.9145pt x 434.22224pt>
+<images//Cycle_diagram.png, id=252, 458.9145pt x 434.22224pt>
 File: images//Cycle_diagram.png Graphic file (type png)
 <use images//Cycle_diagram.png>
-Package pdftex.def Info: images//Cycle_diagram.png  used on input line 443.
+Package pdftex.def Info: images//Cycle_diagram.png  used on input line 446.
 (pdftex.def)             Requested size: 229.45668pt x 217.11058pt.
  [10
 
@@ -643,16 +653,16 @@ Package rerunfilecheck Info: File `project_report.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  14972 strings out of 478868
- 233527 string characters out of 2849284
- 603229 words of memory out of 3000000
+ 233303 string characters out of 2849284
+ 604255 words of memory out of 3000000
  32405 multiletter control sequences out of 15000+600000
  435241 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 87i,14n,117p,1061b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,14n,117p,1061b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc}<C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sftt1000.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Mark/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on project_report.pdf (12 pages, 597007 bytes).
+Output written on project_report.pdf (12 pages, 619023 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
+ 335 PDF objects out of 1000 (max. 8388607)
  65 named destinations out of 1000 (max. 500000)
  34966 words of extra memory for PDF output out of 35830 (max. 10000000)
 

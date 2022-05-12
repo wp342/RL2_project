@@ -31,7 +31,7 @@
 \DeclareCaptionType{equ}[][]
 % Give your project report an appropriate title!
 
-\title{RL Project: Investigation into the use of DQN and PPO in a multiagent environment}
+\title{RL Project: Investigation into the use of Deep Q Learning and PPO in a multiagent environment}
 
 
 % The \author macro works with any number of authors. There are two
@@ -104,7 +104,7 @@ Good agents are punished with a negative reward colliding with adversaries.
 Adversaries are rewarded for colliding with good agents while earning a punishment each step in the form of a negative reward proportional to how close good agents are to the food.
 More details on the reward structure of the environment can be found in table \ref{tab:agent-rewards} in Appendix A
 
-This project focuses on the application of the Deep Q Learning (DQN) and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
+This project focuses on the application of the Deep Q Learning and Actor Critic algorithms to this environment, comparing their relative effectiveness to each other.
 Of particular interest will be contrasting the rate at which the two algorithms learn and also the rewards that their optimal policy results in.
 
 \section{Background} \label{Background}
@@ -137,7 +137,7 @@ It is noted however that “… the algorithm has the caveat of only being able 
 
 \section{Method} \label{Method}
 
-During the initial implementation of both of the DQN and A2C algorithms a simpler problem was used allow for easier testing for correctness of the implementations.
+During the initial implementation of both of the Deep Q Learning and A2C algorithms a simpler problem was used allow for easier testing for correctness of the implementations.
 The Simple Push environment is characterised by two particles, an adversary and an agent, which are attempting to earn as large a reward as possible for being close to a landmark.
 The agent is rewarded proportional to its closeness to the landmark while the adversary is rewarded in two parts.
 First the adversary receives a reward proportional to its closeness to the landmark and, second it is rewarded proportionally for how far away the agent is from the landmark.
@@ -157,7 +157,7 @@ The high levels of correlation present in reinforcement learning environments (e
 To combat this experience replay was introduced where with each step a random batch of previous state, action, reward tuples is selected and used to train the net.
 By utilising this batch method of training it reduces the correlation between the data to reduce the chance of overfitting.
 
-Another issue that can effect DQN algorithms is that they can be unstable and prone to sudden changes if the error is too large when using a normal certain loss formulae such as squared error.
+Another issue that can effect deep Q-learning algorithms is that they can be unstable and prone to sudden changes if the error is too large when using a normal certain loss formulae such as squared error.
 This tendency for large changes to be made to the network is mitigated by utilising a different loss formula such as the Huber Loss utilised in this project which less severely punishes large errors.
 
 \begin{figure}[!ht]
@@ -172,7 +172,7 @@ This target network's weights are updated from the primary network every $C$ ste
 
 \subsubsection{Implementation} \label{DQN-Implementation}
 
-Deep Q-Learning (DQN) was first developed utilising the Simple Push environment described in Section \ref{Method} allowing for quicker testing of the algorithm.
+Deep Q-Learning was first developed utilising the Simple Push environment described in Section \ref{Method} allowing for quicker testing of the algorithm.
 
 For each environment each agent type shared a neural net which consisted of an input layer which matched the dimensions of the observation of the environment state that an agent had, followed by three dense fully connected layers and then a final output layer which matched the action space of the agent.
 In Simple World Comm the adversary leader did not share a net, the three adversaries shared a single net, and the good agents shared a single net.
@@ -183,7 +183,7 @@ The final hyperparameters that the algorithm was run with can be found in table 
 
 \subsection{Actor Critic} \label{A2C-Method}
 
-Touched upon in Section \ref{Background}, PPO algorithms are policy gradient algorithms which aim to produce better results by limiting an agent’s learning rate.
+Touched upon in Section \ref{Background}, PPO algorithms are policy gradient algorithms which aim to produce better results by limiting an agent's learning rate.
 These algorithms curb changes to policy, preventing a new policy from deviating too far from the one that preceded it.
 This is achieved through modification of the objective function.
 For the PPO-clip algorithm this is given by:
@@ -244,7 +244,7 @@ Given that this algorithm is known to perform well in a similar environment and 
 
 \subsubsection{Implementation} \label{A2C-Implementation}
 
-As with the DQN algorithm discussed in subsection \ref{DQN-Implementation} the A2C algorithm was initially applied to the Simple Push.
+As with the deep Q learning algorithm discussed in subsection \ref{DQN-Implementation} the A2C algorithm was initially applied to the Simple Push.
 When applied to Simple Push the episode length was 250 steps.
 The hyperparameters for this algorithm can be found in table \ref{tab:PPOHYPER} in Appendix B
 
@@ -269,30 +269,31 @@ It was chosen to be implemented this way instead of individual networks per agen
 
 \subsection{Simple Push Environment}
 
-Both the PPO and the DQN algorithms showed good learning results in the simple push environment as can be seen from figures \ref{fig:DQNPUSH} and \ref{fig:PPOPUSH}.
+Both the PPO and the deep Q learning algorithms showed good learning results in the simple push environment as can be seen from figures \ref{fig:DQNPUSH} and \ref{fig:PPOPUSH}.
+
 
 \begin{figure}[!ht]
+\hspace*{-1cm}
   \centering
-  \begin{minipage}{.5\linewidth} 
+  \begin{minipage}{.6\linewidth} 
     \centering
-    \includegraphics[width=\linewidth]{simple_push_DQN.png}
+    \includegraphics[width=\linewidth]{push_DQN.png}
     \captionof{figure}{Learning curve from simple push \\
-                      environment using the DQN algorithm. \\
-                      Cyan and darker red  lines denote Random \\ 
-                      policy baselines.}
+                      environment using the deep Q learning algorithm. \\
+                      Cyan and dark red lines denote random policy baselines.}
     \label{fig:DQNPUSH}
   \end{minipage}%
-  \begin{minipage}{.5\linewidth}
+  \begin{minipage}{.6\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{simple_push_PPO.png}
+    \includegraphics[width=\linewidth]{push_PPO.png}
     \captionof{figure}{Learning curve from simple push environment using the PPO algorithm. \\
-            Cyan and darker red lines denote random policy baselines.}
+            Cyan and dark red lines denote random policy baselines.}
     \label{fig:PPOPUSH}
   \end{minipage}
 \end{figure}
 
 
-Both show convergence to an optimal policy for both the agent and adversary, with the DQN reaching a seemingly optimal policy within 150 episodes, while the PPO seems to take around 600 episodes for both agent and adversary to converge.
+Both show convergence to an optimal policy for both the agent and adversary, with the deep Q learning reaching a seemingly optimal policy within 150 episodes, while the PPO seems to take around 600 episodes for both agent and adversary to converge.
 
 \subsection{Simple World Comm Environment}
 
@@ -303,22 +304,23 @@ In this the PPO algorithm performed better with the learning curves for both the
 
 
 \begin{figure}[!ht]
+  \hspace*{-1cm}
   \centering
-  \begin{minipage}{.5\linewidth} 
+  \begin{minipage}{.6\linewidth} 
     \centering
-    \includegraphics[width=\linewidth]{simple_world_comm_DQN.png}
+    \includegraphics[width=\linewidth]{world_comm_DQN.png}
     \captionof{figure}{Learning curve from simple world \\
-                      comm environment using the DQN algorithm. \\
-                      Cyan and darker red lines denote random \\ 
-                      policy baselines.}
+                      comm environment using the deep Q learning \\ 
+                      algorithm. Cyan and dark red lines denote \\ 
+                      random policy baselines.}
     \label{fig:DQNCOMM}
   \end{minipage}%
-  \begin{minipage}{.5\linewidth}
+  \begin{minipage}{.6\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{simple_world_comm_PPO.png}
+    \includegraphics[width=\linewidth]{world_comm_PPO.png}
     \captionof{figure}{Learning curve from simple world \\
                       comm environment using the PPO algorithm. \\
-                      Cyan and darker red lines denote random \\
+                      Cyan and dark red lines denote random \\
                       policy baselines.}
     \label{fig:PPOCOMM}
   \end{minipage}
@@ -380,7 +382,8 @@ Currently, from the agents' team view the way that the environment reacts to the
 Will, not being from any of the data science tracks, found the project to be a very steep learning curve in how to implement neural nets using Tensorflow and Keras having not used them before.
 It took some time for him to get his head round the syntax and what was required in terms of activation functions but when he did and had implemented the PPO algorithm with GAE (having seen it in the hide-and-seek paper \citep{emergenttoolusage} which was similar to our problem), his work produced good results and some surprisingly pleasant learning curves. This learning has resulted in him having a good grasp of his chosen policy gradient method!
 
-An ongoing frustration within the team was the long training cycles that the algorithms (DQN in particular) had to achieve any kind of reasonable results, often in excess of 10 hours using available compute hardware which made iterating on different ideas difficult within the timeframe of the project. There are a lot of ideas which it would have been nice to explore but were not possible with the available time.
+An ongoing frustration within the team was the long training cycles that the algorithms (deep Q learning in particular) had to achieve any kind of reasonable results, often in excess of 10 hours using available compute hardware which made iterating on different ideas difficult within the timeframe of the project. There are a lot of ideas which it would have been beneficial to explore but were not possible with the available time and computing power.
+
 
 % \subsection{Mark Hazell}
 
