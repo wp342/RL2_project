@@ -133,11 +133,11 @@ Owing to their relative simplicity in addition to their effectiveness \citet{PPO
 In a like manner to the extension of the single-agent PPO algorithm to a multiagent problem cited above, \citet{9263738} propose a modification to the advantage actor-critic (A2C) algorithm.
 The vanilla A2C algorithm utilises two neural networks, one to optimise on the basis of policy and a second to optimise value; respectively controlling agent behaviour and providing a measure of how 'good' the agent's actions are.
 The modified algorithm proposed in this work applies this philosophy to a cooperative multiagent problem and produces very promising results in the author's testing.
-It is noted however that “… the algorithm has the caveat of only being able to be used when the agents are fully cooperative without any special predefined roles between them”. \citet{terry2020pettingzoo}
+It is noted however that “… the algorithm has the caveat of only being able to be used when the agents are fully cooperative without any special predefined roles between them” \citet{terry2020pettingzoo}.
 
 \section{Method} \label{Method}
 
-During the initial implementation of both of the Deep Q Learning and A2C algorithms a simpler problem was used allow for easier testing for correctness of the implementations.
+During the initial implementation of both of the Deep Q Learning and PPO algorithms a simpler problem was used allow for easier testing for correctness of the implementations.
 The Simple Push environment is characterised by two particles, an adversary and an agent, which are attempting to earn as large a reward as possible for being close to a landmark.
 The agent is rewarded proportional to its closeness to the landmark while the adversary is rewarded in two parts.
 First the adversary receives a reward proportional to its closeness to the landmark and, second it is rewarded proportionally for how far away the agent is from the landmark.
@@ -244,7 +244,7 @@ Given that this algorithm is known to perform well in a similar environment and 
 
 \subsubsection{Implementation} \label{A2C-Implementation}
 
-As with the deep Q learning algorithm discussed in subsection \ref{DQN-Implementation} the A2C algorithm was initially applied to the Simple Push.
+As with the deep Q learning algorithm discussed in subsection \ref{DQN-Implementation} the PPO algorithm was initially applied to the Simple Push.
 When applied to Simple Push the episode length was 250 steps.
 The hyperparameters for this algorithm can be found in table \ref{tab:PPOHYPER} in Appendix B
 
